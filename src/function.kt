@@ -345,9 +345,9 @@ fun testLambdaFunction() {
     }
 }
 
-inline fun <T> lock(lock: Lock, body: () -> T): T {
-
-}
+//inline fun <T> lock(lock: Lock, body: () -> T): T {
+//    return  T
+//}
 
 
 fun main(args: Array<String>) {
