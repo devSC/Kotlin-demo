@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b6e6a51-6829-42db-88eb-89823a69b588" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/basicTypes.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controlFlow.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class_object.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin-demo/META-INF/Kotlin-demo.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin-demo/META-INF/Kotlin-demo.kotlin_module" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,11 +66,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controlFlow.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controlFlow.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controlFlow.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="121" column="7" selection-start-line="121" selection-start-column="7" selection-end-line="121" selection-end-column="7" />
+            <state relative-caret-position="53">
+              <caret line="104" column="38" lean-forward="true" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_object.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/class_object.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="550" column="11" selection-start-line="550" selection-start-column="11" selection-end-line="550" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,6 +138,7 @@
         <option value="$PROJECT_DIR$/src/enum.kt" />
         <option value="$PROJECT_DIR$/src/basicTypes.kt" />
         <option value="$PROJECT_DIR$/src/controlFlow.kt" />
+        <option value="$PROJECT_DIR$/src/class_object.kt" />
       </list>
     </option>
   </component>
@@ -189,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ControlFlowKt">
+  <component name="RunManager" selected="Kotlin.Class_objectKt">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -219,6 +230,16 @@
       <option name="MAIN_CLASS_NAME" value="BasicTypesKt" />
       <option name="WORKING_DIRECTORY" />
     </configuration>
+    <configuration name="Class_objectKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="Kotlin-demo" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Class_objectKt" />
+      <option name="WORKING_DIRECTORY" />
+    </configuration>
     <configuration name="ControlFlowKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="Kotlin-demo" />
       <option name="VM_PARAMETERS" />
@@ -237,16 +258,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="EnumKt" />
-      <option name="WORKING_DIRECTORY" />
-    </configuration>
-    <configuration name="FunctionKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="Kotlin-demo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="FunctionKt" />
       <option name="WORKING_DIRECTORY" />
     </configuration>
     <configuration name="PropertyKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
@@ -282,19 +293,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Kotlin.FunctionKt" />
       <item itemvalue="Kotlin.PropertyKt" />
       <item itemvalue="Kotlin.EnumKt" />
       <item itemvalue="Kotlin.BasicTypesKt" />
       <item itemvalue="Kotlin.ControlFlowKt" />
+      <item itemvalue="Kotlin.Class_objectKt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Class_objectKt" />
         <item itemvalue="Kotlin.ControlFlowKt" />
         <item itemvalue="Kotlin.BasicTypesKt" />
         <item itemvalue="Kotlin.EnumKt" />
         <item itemvalue="Kotlin.PropertyKt" />
-        <item itemvalue="Kotlin.FunctionKt" />
       </list>
     </recent_temporary>
   </component>
@@ -310,12 +321,12 @@
       <updated>1529460513590</updated>
       <workItem from="1529460517934" duration="2953000" />
       <workItem from="1529463551542" duration="15710000" />
-      <workItem from="1529544117147" duration="4216000" />
+      <workItem from="1529544117147" duration="13345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22879000" />
+    <option name="totallyTimeSpent" value="32008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-852" width="1920" height="1006" extended-state="0" />
@@ -514,8 +525,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controlFlow.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="121" column="7" selection-start-line="121" selection-start-column="7" selection-end-line="121" selection-end-column="7" />
+        <state relative-caret-position="53">
+          <caret line="104" column="38" lean-forward="true" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/class_object.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="550" column="11" selection-start-line="550" selection-start-column="11" selection-end-line="550" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
