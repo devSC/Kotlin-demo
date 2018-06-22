@@ -1,5 +1,6 @@
 import jdk.jfr.Threshold
 import java.text.FieldPosition
+import java.util.spi.AbstractResourceBundleProvider
 
 //class
 
@@ -538,6 +539,38 @@ class Outer1 {
 val demo1 = Outer1().Inner().foo() // == 1
 
 
+//对象表达式与对象声明
+
+//要创建一个继承自某个（或某些）类型的匿名类的对象，我们会这么写：
+
+/*
+window.addMouseListener(object : MouseAdapter() {
+    override fun mouseClicked(e: MouseEvent) {
+// ……
+    }
+    override fun mouseEntered(e: MouseEvent) {
+// ……
+    }
+})
+*/
+
+//如果超类型有一个构造函数，则必须传递适当的构造函数参数给它。 多个超类型可以由跟在
+//冒号后面的逗号分隔的列表指定：
+
+open class I(x: Int) {
+    public open val y: Int = x
+}
+
+interface M {
+
+}
+
+val ab: I = object : I(2), M {
+    override val y: Int
+        get() = 15
+}
+
+
 //任何时候，如果我们只需要“一个对象而已”，并不需要特殊超类型，那么我们可以简单地写：
 
 fun foo2() {
@@ -546,6 +579,37 @@ fun foo2() {
         var y: Int = 0
     }
     println(adHoc.x + adHoc.y)
+}
+
+//匿名对象可以用作只在本地和私有作用域中声明的类型。如果你使用匿名对象作为
+//公有函数的返回类型或者用作公有属性的类型，那么该函数或属性的实际类型会是匿名对象
+//声明的超类型，如果你没有声明任何超类型，就会是 Any 。在匿名对象中添加的成员将无法
+//访问。
+
+class N {
+    //私有方法，所以其返回类型是匿名对象类型
+    private fun foo() = object {
+        val x: String = "x"
+    }
+
+    //公有函数，所以其返回类型是 Any
+    fun publicFoo() = object {
+        val x: String = "x"
+    }
+
+    fun bar() {
+        val x1 = foo().x
+        //val x2 = publicFoo().x //error
+    }
+}
+
+object DataProviderManager {
+    fun registerDataProvider(provider: N) {
+
+    }
+
+//    val allDataProvider: Collection<N>
+//        get() =
 }
 
 //伴生对象的成员看起来像其他语言的静态成员，在运行时他们仍然是真实对象
@@ -582,6 +646,10 @@ fun main(args: Array<String>) {
     val (name, age) = jack
     println("$name age: $age") //jack age: 2
 
+
+    println("伴生对象： ${ab.y}")
+
+    DataProviderManager.registerDataProvider(N())
 
     //类型投影
     //使用处型变：类型投影

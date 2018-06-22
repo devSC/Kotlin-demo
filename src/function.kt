@@ -350,6 +350,30 @@ fun testLambdaFunction() {
 //}
 
 
+
+//协程
+
+//一些 API 启动长时间运行的操作（例如网络 IO、文件 IO、CPU 或 GPU 密集型任务等），
+//并要求调用者阻塞直到它们完成。协程提供了一种避免阻塞线程并用更廉价、更可控的操作
+//替代线程阻塞的方法：协程挂起。
+
+
+//挂起函数
+
+//当我们调用标记有特殊修饰符 suspend 的函数时，会发生挂起：
+suspend fun doSomething(foo: Foo): String {
+    return ""
+}
+
+suspend fun Int.toString2(): String {
+    return this.toString()
+}
+
+//这样的函数称为挂起函数，因为调用它们可能挂起协程（如果相关调用的结果已经可用，库
+//可以决定继续进行而不挂起）。挂起函数能够以与普通函数相同的方式获取参数和返回值，
+//但它们只能从协程、其他挂起函数以及内联到其中的函数字面值中调用。
+
+
 fun main(args: Array<String>) {
     val results = double(2)
     println(results)
@@ -412,4 +436,9 @@ fun main(args: Array<String>) {
     testHighFunction2()
 
     testLambdaFunction()
+
+    list.forEach {
+//        it.toString2().aw
+    }
+
 }
