@@ -1,3 +1,5 @@
+import java.io.BufferedReader
+import java.io.FileReader
 import java.util.concurrent.locks.Lock
 import kotlin.math.max
 
@@ -438,7 +440,71 @@ fun main(args: Array<String>) {
     testLambdaFunction()
 
     list.forEach {
-//        it.toString2().aw
+        //        it.toString2().aw
     }
 
+    //with
+    /**
+     * 高阶函数
+     * 1.with函数：该函数需要传入一个对象，之后可以在该函数中直接使用传入的对象的属性或方法，
+     * 不需要 类名.属性 的方式就可以使用
+     * 2.use函数：该函数只能被实现了Closeable的对象使用，程序结束的时候会自动调用close方法，适合文件对象
+     */
+    val br = BufferedReader(FileReader("hello.text"))
+    //
+    with(br) {
+        var line: String?
+        while (true) {
+            line = readLine() ?: break //
+            println(line)
+        }
+        close()
+    }
+
+
+    /**
+     * use函数：该函数只能被实现了Closeable的对象使用，程序结束的时候会自动调用close方法，适合文件对象
+     * */
+    BufferedReader(FileReader("hello.text")).use {
+        var line: String?
+        while (true) {
+            line = readLine() ?: break //
+            println(line)
+        }
+    }
+
+    /**
+     * 高阶函数
+     * 1.let函数：可以以参数对象的形式调用参数对象里的属性或者方法（适用于对象）
+     * 2.apply函数：可以直接调用对象中的属性或者方法，不需要参数对象（适用于对象）
+     */
+    data class Person(val name: String, val age: Int) {
+        fun work() {
+            println("$name 正在工作中")
+        }
+    }
+
+    fun findPerson(): Person? {
+        return null
+    }
+
+    val person = findPerson()
+
+    findPerson()?.let { (name, age) ->
+        println(name)
+    }
+
+    findPerson()?.let {
+        it.name
+    }
+
+    //调用对象方法
+    findPerson()?.work()
+
+    findPerson()?.let(Person::work)
+
+
+    findPerson()?.apply {
+        println(name)
+    }
 }
